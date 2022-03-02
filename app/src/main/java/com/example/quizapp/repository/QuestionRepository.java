@@ -1,11 +1,15 @@
 package com.example.quizapp.repository;
 
+import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
+
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.quizapp.model.Question;
 import com.example.quizapp.model.QuestionResponse;
 import com.example.quizapp.network.ApiInterface;
-import com.example.quizapp.network.RetrofitApiCilent;
+import com.example.quizapp.network.RetrofitApiClient;
 
 import java.util.List;
 
@@ -21,13 +25,14 @@ public class QuestionRepository {
     ApiInterface apiInterface;
 
     public QuestionRepository() {
-        apiInterface = RetrofitApiCilent.getApiClient().create(ApiInterface.class);
+        apiInterface = RetrofitApiClient.getApiClient().create(ApiInterface.class);
     }
 
     public MutableLiveData<List<Question>> getAllQuestion() {
         apiInterface.getAllQuestion().enqueue(new Callback<QuestionResponse>() {
             @Override
             public void onResponse(Call<QuestionResponse> call, Response<QuestionResponse> response) {
+
                 if (response.code()==200&&response.body()!=null)
                 {
                     questionLD.postValue(response.body().getQuestions());
@@ -40,6 +45,7 @@ public class QuestionRepository {
 
             @Override
             public void onFailure(Call<QuestionResponse> call, Throwable t) {
+                Log.i(TAG, "onFailure: "+t.getLocalizedMessage());
                 errorMsg.postValue(t.getLocalizedMessage());
 
             }

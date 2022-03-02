@@ -3,7 +3,7 @@ package com.example.quizapp.network;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitApiCilent {
+public class RetrofitApiClient {
     private static final String BASE_URL = "https://herosapp.nyc3.digitaloceanspaces.com/";
 
     private static Retrofit retrofit = null;

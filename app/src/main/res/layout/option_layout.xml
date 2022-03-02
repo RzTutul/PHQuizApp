@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/optionTV"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_3sdp"
+    android:background="@drawable/choose_ans_border"
+    android:padding="@dimen/_12sdp"
+    android:text="Test "
+    android:gravity="center"
+    android:fontFamily="@font/montserrat_bold"
+    android:textColor="@color/primary_color"
+    tools:showIn="@layout/fragment_question" />

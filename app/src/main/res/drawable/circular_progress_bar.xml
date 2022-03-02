@@ -12,8 +12,8 @@
         <corners android:radius="@dimen/_50sdp"/>
         <gradient
             android:angle="0"
-            android:endColor="@color/primary_color"
-            android:startColor="@color/primary_color"
+            android:endColor="@color/right_ans"
+            android:startColor="@color/right_ans"
             android:type="sweep"
             android:useLevel="true" />
     </shape>

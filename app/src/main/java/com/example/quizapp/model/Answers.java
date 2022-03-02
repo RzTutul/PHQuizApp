@@ -4,6 +4,9 @@ package com.example.quizapp.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Answers {
 
     @SerializedName("A")
@@ -49,6 +52,21 @@ public class Answers {
 
     public void setD(String d) {
         this.d = d;
+    }
+
+    public List<String> generateOptionList() {
+        List<String> option = new ArrayList<>();
+        option.add(a);
+        option.add(b);
+        if (c != null) {
+            option.add(c);
+        }
+        if (d != null) {
+            option.add(d);
+        }
+
+        return option;
+
     }
 
 }

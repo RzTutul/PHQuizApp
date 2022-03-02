@@ -8,10 +8,10 @@
     tools:context=".QuestionFrag">
 
     <nl.dionsegijn.konfetti.KonfettiView
-        android:elevation="@dimen/_100sdp"
         android:id="@+id/viewKonfetti"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:elevation="@dimen/_100sdp" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -33,33 +33,43 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.55" />
 
     <TextView
-        android:layout_margin="@dimen/_15sdp"
         android:id="@+id/questionnoTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
         android:elevation="@dimen/_10sdp"
-        android:text="Question 2/10"
         android:fontFamily="@font/montserrat_bold"
+        android:text="Question 2/10"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-  <TextView
-        android:layout_margin="@dimen/_15sdp"
+
+    <ProgressBar
+        android:id="@+id/questionProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_3sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/scoreTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
         android:elevation="@dimen/_10sdp"
+        android:fontFamily="@font/montserrat_bold"
         android:text="Score 0"
-      android:fontFamily="@font/montserrat_bold"
-      android:textColor="@android:color/white"
+        android:textColor="@android:color/white"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <ImageView
@@ -70,11 +80,7 @@
         app:layout_constraintBottom_toTopOf="@id/topCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topCard"
-        />
-
-
-
+        app:layout_constraintTop_toBottomOf="@id/topCard" />
 
 
     <TextView
@@ -82,21 +88,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="@dimen/_10sdp"
-        tools:text="10"
         android:textColor="@color/primary_color"
         android:textSize="@dimen/_20sdp"
         app:layout_constraintBottom_toTopOf="@id/topCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topCard" />
-
+        app:layout_constraintTop_toBottomOf="@id/topCard"
+        tools:text="10" />
 
 
     <ProgressBar
         android:id="@+id/progress_circular_id"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="@dimen/_80sdp"
-        android:layout_height="@dimen/_80sdp"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
         android:layout_centerInParent="true"
         android:elevation="@dimen/_100sdp"
         android:indeterminate="false"
@@ -165,10 +170,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:max="50"
-                    android:rotation="180"
                     android:progress="1"
                     android:progressBackgroundTint="#82e9de"
-                    android:progressTint="#E34C41" />
+                    android:progressTint="#E34C41"
+                    android:rotation="180" />
 
                 <TextView
                     android:id="@+id/wrongAnsTV"
@@ -187,12 +192,12 @@
                 android:id="@+id/pointTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_40sdp"
                 android:elevation="@dimen/_10sdp"
-                android:text="100 Point"
                 android:fontFamily="@font/rundschriftpro"
+                android:text="100 Point"
                 android:textColor="@color/primary_color"
-                android:textSize="@dimen/_10sdp"
+                android:textSize="@dimen/_15sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -203,25 +208,28 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:contentDescription="@string/logo_image"
+                android:scaleType="fitXY"
                 android:src="@drawable/logo"
-                app:layout_constraintDimensionRatio="H,4:1"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.50"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pointTV" />
+                app:layout_constraintTop_toBottomOf="@id/pointTV"
+                app:layout_constraintWidth_percent="0.80" />
 
             <TextView
                 android:id="@+id/questionTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elevation="@dimen/_15sdp"
+                android:fontFamily="@font/rundschriftpro"
+                android:gravity="center"
                 android:padding="@dimen/_10sdp"
-                android:text="Question unavailable in this level\n             Try another level !"
                 android:textColor="@color/primary_color"
                 android:textSize="@dimen/_12sdp"
-                android:fontFamily="@font/rundschriftpro"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/questionIV" />
+                app:layout_constraintTop_toBottomOf="@id/questionIV"
+                tools:text="What is capital of bangladesh?" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -231,90 +239,42 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/endCard"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/endCard">
 
         <LinearLayout
-            android:id="@+id/quesitonLL"
+            android:id="@+id/optionLL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_margin="@dimen/_25sdp"
-            >
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/option1TV"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/optionRV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_3sdp"
-                android:background="@drawable/choose_ans_border"
-                android:padding="@dimen/_12sdp"
-                android:text="Jessore "
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_bold"
-                android:textColor="@color/primary_color" />
-
-            <TextView
-                android:gravity="center"
-                android:id="@+id/option2TV"
-                android:layout_margin="@dimen/_3sdp"
-                android:background="@drawable/choose_ans_border"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_12sdp"
-                android:text="Dhaka "
-                android:fontFamily="@font/montserrat_bold"
-                android:textColor="@color/primary_color"
-                />
-
-            <TextView
-                android:id="@+id/option3TV"
-                android:layout_margin="@dimen/_3sdp"
-                android:background="@drawable/choose_ans_border"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_12sdp"
-                android:text="Chitagang "
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_bold"
-                android:textColor="@color/primary_color"
-                />
-
-            <TextView
-                android:id="@+id/option4TV"
-                android:layout_margin="@dimen/_3sdp"
-                android:background="@drawable/choose_ans_border"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/_12sdp"
-                android:text="Khulna "
-                android:gravity="center"
-                android:fontFamily="@font/montserrat_bold"
-                android:textColor="@color/primary_color"
-                />
-
+                tools:itemCount="4"
+                tools:listitem="@layout/option_layout" />
 
 
         </LinearLayout>
-
 
 
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/backBtn"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/_20sdp"
-        android:text="Back"
         android:gravity="center"
+        android:text="Back"
         android:textColor="@android:color/white"
-        />
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
