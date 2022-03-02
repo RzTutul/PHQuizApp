@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    tools:context=".QuestionFrag">
+
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:elevation="@dimen/_100sdp"
+        android:id="@+id/viewKonfetti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGL"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="219dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topCard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endCard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:layout_margin="@dimen/_15sdp"
+        android:id="@+id/questionnoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_10sdp"
+        android:text="Question 2/10"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+  <TextView
+        android:layout_margin="@dimen/_15sdp"
+        android:id="@+id/scoreTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_10sdp"
+        android:text="Score 0"
+      android:fontFamily="@font/montserrat_bold"
+      android:textColor="@android:color/white"
+        android:textSize="@dimen/_15sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <ImageView
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:elevation="@dimen/_10sdp"
+        android:src="@drawable/cicle_shape"
+        app:layout_constraintBottom_toTopOf="@id/topCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topCard"
+        />
+
+
+
+
+
+    <TextView
+        android:id="@+id/counterTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_10sdp"
+        tools:text="10"
+        android:textColor="@color/primary_color"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/topCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topCard" />
+
+
+
+    <ProgressBar
+        android:id="@+id/progress_circular_id"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_centerInParent="true"
+        android:elevation="@dimen/_100sdp"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        app:layout_constraintBottom_toTopOf="@id/topCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topCard" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:elevation="@dimen/_4sdp"
+        app:cardCornerRadius="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="@id/endCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topCard">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/rightAnsTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/primary_color"
+
+                    />
+
+                <ProgressBar
+                    android:id="@+id/rightProgess"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:max="50"
+                    android:progress="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ProgressBar
+                    android:id="@+id/wrongProgess"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:max="50"
+                    android:rotation="180"
+                    android:progress="1"
+                    android:progressBackgroundTint="#82e9de"
+                    android:progressTint="#E34C41" />
+
+                <TextView
+                    android:id="@+id/wrongAnsTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:text="0"
+                    android:textColor="@color/wrong_ans"
+
+                    />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/pointTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_55sdp"
+                android:elevation="@dimen/_10sdp"
+                android:text="100 Point"
+                android:fontFamily="@font/rundschriftpro"
+                android:textColor="@color/primary_color"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/questionIV"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/logo_image"
+                android:src="@drawable/logo"
+                app:layout_constraintDimensionRatio="H,4:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pointTV" />
+
+            <TextView
+                android:id="@+id/questionTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_15sdp"
+                android:padding="@dimen/_10sdp"
+                android:text="Question unavailable in this level\n             Try another level !"
+                android:textColor="@color/primary_color"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/rundschriftpro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/questionIV" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/endCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/quesitonLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_25sdp"
+            >
+
+            <TextView
+                android:id="@+id/option1TV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/choose_ans_border"
+                android:padding="@dimen/_12sdp"
+                android:text="Jessore "
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/primary_color" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/option2TV"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/choose_ans_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12sdp"
+                android:text="Dhaka "
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/primary_color"
+                />
+
+            <TextView
+                android:id="@+id/option3TV"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/choose_ans_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12sdp"
+                android:text="Chitagang "
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/primary_color"
+                />
+
+            <TextView
+                android:id="@+id/option4TV"
+                android:layout_margin="@dimen/_3sdp"
+                android:background="@drawable/choose_ans_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12sdp"
+                android:text="Khulna "
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/primary_color"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/backBtn"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="Back"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

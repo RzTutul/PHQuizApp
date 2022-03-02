@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="_00_point">00 Point</string>
+    <string name="highscore">Highscore</string>
+    <string name="logo_image">logo_image</string>
+</resources>
