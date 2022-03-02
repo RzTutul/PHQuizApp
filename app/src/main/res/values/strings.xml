@@ -5,7 +5,18 @@
     <string name="start">Start</string>
     <string name="_00_point">00 Point</string>
     <string name="highscore">Highscore</string>
+    <string name="quiz">Quiz</string>
     <string name="logo_image">logo_image</string>
     <string name="points">"%d Point"</string>
-    <string name="question_no">"Question %d/%d"</string>
+    <string name="high_points">"%d Point"</string>
+    <string name="total_score">"Score: %d "</string>
+    <string name="question_no">"Question: %d/%d"</string>
+    <string name="error_msg">Question unavailable right now\nTry again!</string>
+    <string name="notice">Quit this Game?</string>
+    <string name="warring_msg">If you get out of here you will lose your earned score. Do you want to quit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="Interneton">Internet available</string>
+    <string name="internetoff">No Internet available</string>
+    <string name="loading">Loading</string>
 </resources>

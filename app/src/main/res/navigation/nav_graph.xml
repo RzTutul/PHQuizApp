@@ -3,16 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/questionFrag">
+    app:startDestination="@id/homeFrag">
 
     <fragment
         android:id="@+id/homeFrag"
         android:name="com.example.quizapp.HomeFrag"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFrag_to_questionFrag"
+            app:destination="@id/questionFrag"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/homeFrag"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/questionFrag"
         android:name="com.example.quizapp.QuestionFrag"
         android:label="fragment_question"
-        tools:layout="@layout/fragment_question" />
+        tools:layout="@layout/fragment_question" >
+        <action
+            android:id="@+id/action_questionFrag_to_homeFrag"
+            app:destination="@id/homeFrag"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/questionFrag"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

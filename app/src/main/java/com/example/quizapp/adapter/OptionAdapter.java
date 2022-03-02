@@ -51,24 +51,30 @@ public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.OptionView
         holder.mbinding.optionTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.selectOption((position + 1));
+                if (selectOption == 0) {
+                    listener.selectOption((position + 1));
+
+                }
             }
         });
 
         holder.mbinding.optionTV.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.white_round_shape, 0);
         holder.mbinding.optionTV.setBackground(context.getResources().getDrawable(R.drawable.choose_ans_border));
 
-        if (correctOption == selectOption && correctOption!=0) {
+        if (correctOption == selectOption && correctOption == position + 1) {
             holder.mbinding.optionTV.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check, 0);
             holder.mbinding.optionTV.setBackground(context.getResources().getDrawable(R.drawable.choose_ans_right_border));
         }
 
-         if (correctOption != selectOption && correctOption!=0) {
+        if (correctOption == position + 1) {
+            holder.mbinding.optionTV.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_check, 0);
+            holder.mbinding.optionTV.setBackground(context.getResources().getDrawable(R.drawable.choose_ans_right_border));
+        }
+
+        if (correctOption != selectOption && selectOption == position + 1) {
             holder.mbinding.optionTV.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_wrong, 0);
             holder.mbinding.optionTV.setBackground(context.getResources().getDrawable(R.drawable.choose_ans_wrong_border));
         }
-
-
 
 
     }
@@ -84,13 +90,7 @@ public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.OptionView
         notifyDataSetChanged();
     }
 
-    private void EnableOptionClick(TextView te) {
-        //  optionTV.setClickable(true);
-    }
 
-    private void DisableOptionClick() {
-        //optionTV.setClickable(false);
-    }
 
 
     public void setItemListener(ItemOnClickListener itemListener) {
@@ -104,8 +104,8 @@ public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.OptionView
 
     public void setOptionList(List<String> modelList) {
         this.list = modelList;
-        correctOption=0;
-        selectOption =0;
+        correctOption = 0;
+        selectOption = 0;
         notifyDataSetChanged();
     }
 
