@@ -7,11 +7,7 @@
     android:background="@color/primary_color"
     tools:context=".QuestionFrag">
 
-    <nl.dionsegijn.konfetti.KonfettiView
-        android:id="@+id/viewKonfetti"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:elevation="@dimen/_100sdp" />
+
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -42,7 +38,7 @@
         android:layout_margin="@dimen/_15sdp"
         android:elevation="@dimen/_10sdp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="Question 2/10"
+        android:text="Question 0/0"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,13 +132,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+
                 <TextView
                     android:id="@+id/rightAnsTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:textColor="@color/primary_color"
-
+                    android:textColor="@color/right_ans"
                     />
 
                 <ProgressBar
@@ -195,7 +191,7 @@
                 android:layout_marginTop="@dimen/_40sdp"
                 android:elevation="@dimen/_10sdp"
                 android:fontFamily="@font/rundschriftpro"
-                android:text="100 Point"
+                tools:text="100 Point"
                 android:textColor="@color/primary_color"
                 android:textSize="@dimen/_15sdp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -209,7 +205,7 @@
                 android:layout_height="0dp"
                 android:contentDescription="@string/logo_image"
                 android:scaleType="fitXY"
-                android:src="@drawable/logo"
+                tools:src="@drawable/logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="0.50"
                 app:layout_constraintStart_toStartOf="parent"

@@ -17,28 +17,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.35"
+        app:layout_constraintVertical_bias="0.25"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/quizTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/quiz"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_25sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoIV" />
 
     <TextView
         android:id="@+id/htitleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/rundschriftpro"
         android:text="@string/highscore"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoIV" />
+        app:layout_constraintTop_toBottomOf="@+id/quizTitle" />
 
 
     <TextView
         android:id="@+id/scoreTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/rundschriftpro"
         android:text="@string/_00_point"
         android:textColor="@android:color/white"
         android:textSize="@dimen/_15sdp"

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.quizapp.Utils.MyPreferences;
 import com.example.quizapp.databinding.FragmentHomeBinding;
 
 
@@ -35,10 +36,11 @@ public class HomeFrag extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.scoreTV.setText(String.format(getResources().getString(R.string.high_points),MyPreferences.getHighScore(getContext())));
         binding.startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Navigation.findNavController(view).navigate(R.id.action_homeFrag_to_questionFrag);
             }
         });
     }
