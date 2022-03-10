@@ -4,7 +4,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitApiClient {
-    private static final String BASE_URL = "https://herosapp.nyc3.digitaloceanspaces.com/";
+
+    static {
+        System.loadLibrary("keys");
+    }
+    public static native String GetBaseUrl();
+
+
+    private static final String BASE_URL = GetBaseUrl();
 
     private static Retrofit retrofit = null;
 
